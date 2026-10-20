@@ -1,0 +1,8 @@
+2026-10-20 21:35:26.276384+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "insert into user_account (email, display_name, role, created_at) values[*]"; oczekiwano "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "insert into user_account (email, display_name, role, created_at) values[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+insert into user_account (email, display_name, role, created_at) values [42001-232]
+2026-10-20 21:35:53.797264+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Błąd składniowy w wyrażeniu SQL "insert into user_account (email, display_name, role, created_at) values[*]"; oczekiwano "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "insert into user_account (email, display_name, role, created_at) values[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+insert into user_account (email, display_name, role, created_at) values [42001-232]

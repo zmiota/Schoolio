@@ -8,7 +8,7 @@ insert into user_account (email, display_name, role, created_at) values
     ('admin@example.com',       'Admin', 'ADMIN',   current_timestamp),
     ('s798401@student.wroclaw.merito.pl', 'Kacper', 'USER', current_timestamp),
     ('s264544@student.wroclaw.merito.pl', 'Bartłomiej', 'USER', current_timestamp),
-    ('s676916@student.wroclaw.merito.pl', 'Kateryna', 'USER', current_timestamp),
+    ('s676916@student.wroclaw.merito.pl', 'Kateryna', 'USER', current_timestamp);
 
 -- LAB 01: Wasze konta (zmieńcie na swoje dane, rola USER)
 -- insert into user_account (email, display_name, role, created_at) values

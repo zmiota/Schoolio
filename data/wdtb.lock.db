@@ -1,6 +1,6 @@
 #FileLock
-#Tue Oct 20 21:39:01 CEST 2026
-hostName=DESKTOP-CFPGBUH
-id=1a15ad2f33c873f3f8e1731f369edb52656ebd25f87
+#Sat Oct 24 21:00:07 CEST 2026
+hostName=Laptop
+id=1a16f48cf626486d301a9872f52eb6ee02d1572a08a
 method=file
-server=192.168.56.1\:54887
+server=192.168.10.212\:55119

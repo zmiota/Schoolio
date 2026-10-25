@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Administrator',
             'email' => 'admin@example.com',
-            'password' => bcrypt('admin123'),
+            'password' => bcrypt('WSB2026!wsb'),
             'role' => 'admin',
         ]);
 
@@ -65,7 +65,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Adam Wiśniewski',
             'email' => 'adamwisniewski@example.com',
-            'password' => bcrypt('12345678'),
+            'password' => bcrypt('WSB2026!wsb'),
             'role' => 'teacher',
         ])->subjects()->sync(
             collect($subjectIds)
@@ -74,7 +74,7 @@ class DatabaseSeeder extends Seeder
         );
 
         User::factory()->count(5)->create([
-            'password' => bcrypt('12345678'),
+            'password' => bcrypt('WSB2026!wsb'),
             'role' => 'teacher',
         ])->each(function (User $teacher) use ($subjectIds) {
             $count = min(rand(1, 3), count($subjectIds));
@@ -88,7 +88,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Jan Kowalski',
             'email' => 'jankowalski@example.com',
-            'password' => bcrypt('12345678'),
+            'password' => bcrypt('WSB2026!wsb'),
             'class_id' => SchoolClass::first()->id,
             'role' => 'student',
         ])->subjects()->sync(
@@ -98,7 +98,7 @@ class DatabaseSeeder extends Seeder
         );
 
         User::factory()->count(10)->create([
-            'password' => bcrypt('12345678'),
+            'password' => bcrypt('WSB2026!wsb'),
             'role' => 'student',
         ])->each(function (User $student) use ($subjectIds) {
             $student->class_id = SchoolClass::inRandomOrder()->value('id');

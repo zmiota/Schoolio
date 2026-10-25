@@ -9,4 +9,3 @@ target/
 # Materiały prowadzącego (wykłady, arkusze z danymi studentów) nie trafiają do repozytorium
 *.pptx
 *.xlsx
-/node_modules/

@@ -19,7 +19,7 @@
     <description>Projekt zespołowy z przedmiotu Wprowadzenie do technologii backendowych (WdTB)</description>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>25</java.version>
         <archunit.version>1.4.1</archunit.version>
         <!--
             Numer laboratorium, którego reguły projektu są aktywne.

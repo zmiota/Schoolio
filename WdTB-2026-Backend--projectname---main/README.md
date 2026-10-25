@@ -56,14 +56,14 @@ O czym łatwo zapomnieć:
 
 ## Projekt w IntelliJ IDEA
 
-Wymagania: JDK 21 lub nowsze, IntelliJ IDEA (Maven i Git są wbudowane), konto na GitHubie. Docker nie jest potrzebny.
+Wymagania: JDK 25 lub nowsze, IntelliJ IDEA (Maven i Git są wbudowane), konto na GitHubie. Docker nie jest potrzebny.
 
 ### Pobranie projektu
 
 1. *File → New → Project from Version Control* (na ekranie powitalnym: **Clone Repository**).
 2. URL: `https://github.com/<login>/WdTB-2026-Backend-<nazwaprojektu>.git` → **Clone** → **Trust Project**.
 3. IntelliJ rozpozna projekt Maven i pobierze zależności (pasek postępu na dole okna, za pierwszym razem kilka minut).
-4. Brak JDK? *File → Project Structure → Project → SDK → Download JDK* → wersja 21 lub nowsza.
+4. Brak JDK? *File → Project Structure → Project → SDK → Download JDK* → wersja 25 lub nowsza.
 
 ### Uruchomienie aplikacji
 

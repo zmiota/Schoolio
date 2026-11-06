@@ -1,10 +1,9 @@
 package pl.wsb.projekt.grade.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import pl.wsb.projekt.grade.domain.Grade;
+import pl.wsb.projekt.grade.dto.CreateGradeRequest;
 import pl.wsb.projekt.grade.service.GradeService;
 
 import java.util.List;
@@ -27,5 +26,11 @@ public class GradeController {
     @GetMapping("/student/{studentId}")
     public List<Grade> getGradesByStudent(@PathVariable Long studentId) {
         return gradeService.getGradesForStudent(studentId);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Grade addGrade(@RequestBody CreateGradeRequest request) {
+        return gradeService.createGrade(request);
     }
 }

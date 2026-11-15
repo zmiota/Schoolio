@@ -2,7 +2,6 @@ package pl.wsb.schoolio.grade.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import pl.wsb.schoolio.grade.dto.CreateGradeRequest;
 import pl.wsb.schoolio.grade.entity.Grade;
 import pl.wsb.schoolio.grade.service.GradeService;
@@ -22,11 +21,6 @@ public class GradeController {
     @GetMapping
     public List<Grade> getAllGrades() {
         return gradeService.getAllGrades();
-    }
-
-    @GetMapping("/student/{studentId}")
-    public List<Grade> getGradesByStudent(@PathVariable Long studentId) {
-        return gradeService.getGradesForStudent(studentId);
     }
 
     @PostMapping

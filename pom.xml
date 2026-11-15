@@ -38,9 +38,8 @@
             Lokalnie podnosisz go sam na początku każdego laboratorium.
             W GitHub Actions tag lab-N uruchamia reguły laboratorium N.
         -->
-        <lab>1</lab>
+        <lab>2</lab>
     </properties>
-<lab>2</lab>
     <dependencies>
         <!-- LAB 02: JPA + H2 -->
         <dependency>

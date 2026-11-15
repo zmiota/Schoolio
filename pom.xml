@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.14</version>
+        <version>3.5.15</version>
         <relativePath/>
     </parent>
 
@@ -19,7 +19,19 @@
     <description>Projekt zespołowy z przedmiotu Wprowadzenie do technologii backendowych (WdTB)</description>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>25</java.version>
+        <!-- CVE-driven overrides: Boot 3.5.15 does not yet manage these patched releases.
+             Jackson: CVE-2026-59888, CVE-2026-59889, CVE-2026-54512 through
+             CVE-2026-54518, CVE-2026-77310, CVE-2026-83557, CVE-2026-68497,
+             CVE-2026-19032, CVE-2026-91776, CVE-2026-91777, CVE-2026-89407,
+             CVE-2026-89425, CVE-2026-68494.
+             Log4j: CVE-2026-49844. Tomcat: CVE-2026-41284, CVE-2026-41293,
+             CVE-2026-42498, CVE-2026-43512 through CVE-2026-43515,
+             CVE-2026-53404, CVE-2026-55276, CVE-2026-55956, CVE-2026-65182,
+             CVE-2026-65637, CVE-2026-65905, CVE-2026-68525. -->
+        <jackson-bom.version>2.21.7</jackson-bom.version>
+        <log4j2.version>2.25.5</log4j2.version>
+        <tomcat.version>10.1.59</tomcat.version>
         <archunit.version>1.4.1</archunit.version>
         <!--
             Numer laboratorium, którego reguły projektu są aktywne.

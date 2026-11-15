@@ -6,6 +6,10 @@ import pl.wsb.schoolio.grade.dto.CreateGradeRequest;
 import pl.wsb.schoolio.grade.entity.Grade;
 import pl.wsb.schoolio.grade.entity.GradeCategory;
 import pl.wsb.schoolio.grade.repository.GradeRepository;
+import pl.wsb.schoolio.student.entity.Student;
+import pl.wsb.schoolio.student.repository.StudentRepository;
+import pl.wsb.schoolio.subject.entity.Subject;
+import pl.wsb.schoolio.subject.repository.SubjectRepository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,9 +18,15 @@ import java.util.List;
 public class GradeService {
 
     private final GradeRepository gradeRepository;
+    private final StudentRepository studentRepository;
+    private final SubjectRepository subjectRepository;
 
-    public GradeService(GradeRepository gradeRepository) {
+    public GradeService(GradeRepository gradeRepository,
+                        StudentRepository studentRepository,
+                        SubjectRepository subjectRepository) {
         this.gradeRepository = gradeRepository;
+        this.studentRepository = studentRepository;
+        this.subjectRepository = subjectRepository;
     }
 
     public List<Grade> getAllGrades() {
@@ -29,12 +39,20 @@ public class GradeService {
             throw new IllegalArgumentException("Ocena musi mieścić się w przedziale od 1 do 6.");
         }
 
+        Student student = studentRepository.findById(request.getStudentId())
+                .orElseThrow(() -> new IllegalArgumentException("Nie znaleziono ucznia o ID: " + request.getStudentId()));
+
+        Subject subject = subjectRepository.findById(request.getSubjectId())
+                .orElseThrow(() -> new IllegalArgumentException("Nie znaleziono przedmiotu o ID: " + request.getSubjectId()));
+
         Grade grade = new Grade(
                 request.getValue(),
                 request.getWeight() != null ? request.getWeight() : 1,
                 GradeCategory.EXAM,
                 request.getComment(),
-                LocalDate.now()
+                LocalDate.now(),
+                student,
+                subject
         );
 
         return gradeRepository.save(grade);

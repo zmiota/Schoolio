@@ -1,6 +1,10 @@
 package pl.wsb.schoolio.subject.entity;
 
 import jakarta.persistence.*;
+import pl.wsb.schoolio.grade.entity.Grade;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "subject")
@@ -22,6 +26,9 @@ public class Subject {
     @Column(name = "mandatory", nullable = false)
     private Boolean mandatory;
 
+    @OneToMany(mappedBy = "subject")
+    private List<Grade> grades = new ArrayList<>();
+
     protected Subject() {
     }
 
@@ -37,4 +44,5 @@ public class Subject {
     public String getShortCode() { return shortCode; }
     public String getDescription() { return description; }
     public Boolean getMandatory() { return mandatory; }
+    public List<Grade> getGrades() { return grades; }
 }

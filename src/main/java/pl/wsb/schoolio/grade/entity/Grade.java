@@ -1,6 +1,9 @@
 package pl.wsb.schoolio.grade.entity;
 
 import jakarta.persistence.*;
+import pl.wsb.schoolio.student.entity.Student;
+import pl.wsb.schoolio.subject.entity.Subject;
+
 import java.time.LocalDate;
 
 @Entity
@@ -27,15 +30,25 @@ public class Grade {
     @Column(name = "issued_at", nullable = false)
     private LocalDate issuedAt;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "student_id", nullable = false)
+    private Student student;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "subject_id", nullable = false)
+    private Subject subject;
+
     protected Grade() {
     }
 
-    public Grade(Integer gradeValue, Integer weight, GradeCategory category, String comment, LocalDate issuedAt) {
+    public Grade(Integer gradeValue, Integer weight, GradeCategory category, String comment, LocalDate issuedAt, Student student, Subject subject) {
         this.gradeValue = gradeValue;
         this.weight = weight;
         this.category = category;
         this.comment = comment;
         this.issuedAt = issuedAt;
+        this.student = student;
+        this.subject = subject;
     }
 
     public Long getId() { return id; }
@@ -44,4 +57,6 @@ public class Grade {
     public GradeCategory getCategory() { return category; }
     public String getComment() { return comment; }
     public LocalDate getIssuedAt() { return issuedAt; }
+    public Student getStudent() { return student; }
+    public Subject getSubject() { return subject; }
 }

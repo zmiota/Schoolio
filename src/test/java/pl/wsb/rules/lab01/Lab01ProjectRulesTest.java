@@ -27,7 +27,7 @@ class Lab01ProjectRulesTest {
 
         assertThat(name)
                 .withFailMessage("Pakiet główny musi mieć postać pl.wsb.<nazwaprojektu> (jedno słowo, małe litery, bez polskich znaków). "
-                        + "Zmieńcie pl.wsb.schoolio na nazwę Waszego projektu. Teraz: pl.wsb." + name)
+                        + "Zmieńcie pl.wsb.projekt na nazwę Waszego projektu. Teraz: pl.wsb." + name)
                 .matches("[a-z][a-z0-9]*")
                 .isNotEqualTo("projekt");
 

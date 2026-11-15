@@ -1,6 +1,12 @@
 package pl.wsb.schoolio.subject.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import pl.wsb.schoolio.grade.entity.Grade;
 
 import java.util.ArrayList;
@@ -39,10 +45,27 @@ public class Subject {
         this.mandatory = mandatory;
     }
 
-    public Long getId() { return id; }
-    public String getName() { return name; }
-    public String getShortCode() { return shortCode; }
-    public String getDescription() { return description; }
-    public Boolean getMandatory() { return mandatory; }
-    public List<Grade> getGrades() { return grades; }
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getShortCode() {
+        return shortCode;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Boolean getMandatory() {
+        return mandatory;
+    }
+
+    public List<Grade> getGrades() {
+        return grades;
+    }
 }

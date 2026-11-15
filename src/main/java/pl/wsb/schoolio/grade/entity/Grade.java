@@ -1,6 +1,16 @@
 package pl.wsb.schoolio.grade.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import pl.wsb.schoolio.student.entity.Student;
 import pl.wsb.schoolio.subject.entity.Subject;
 
@@ -51,12 +61,35 @@ public class Grade {
         this.subject = subject;
     }
 
-    public Long getId() { return id; }
-    public Integer getGradeValue() { return gradeValue; }
-    public Integer getWeight() { return weight; }
-    public GradeCategory getCategory() { return category; }
-    public String getComment() { return comment; }
-    public LocalDate getIssuedAt() { return issuedAt; }
-    public Student getStudent() { return student; }
-    public Subject getSubject() { return subject; }
+    public Long getId() {
+        return id;
+    }
+
+    public Integer getGradeValue() {
+        return gradeValue;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public GradeCategory getCategory() {
+        return category;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public LocalDate getIssuedAt() {
+        return issuedAt;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public Subject getSubject() {
+        return subject;
+    }
 }

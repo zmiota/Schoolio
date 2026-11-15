@@ -1,6 +1,14 @@
 package pl.wsb.schoolio.club.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
 import pl.wsb.schoolio.student.entity.Student;
 
 import java.util.HashSet;
@@ -44,10 +52,27 @@ public class Club {
         this.maxMembers = maxMembers;
     }
 
-    public Long getId() { return id; }
-    public String getName() { return name; }
-    public String getSupervisorName() { return supervisorName; }
-    public String getMeetingDay() { return meetingDay; }
-    public Integer getMaxMembers() { return maxMembers; }
-    public Set<Student> getStudents() { return students; }
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSupervisorName() {
+        return supervisorName;
+    }
+
+    public String getMeetingDay() {
+        return meetingDay;
+    }
+
+    public Integer getMaxMembers() {
+        return maxMembers;
+    }
+
+    public Set<Student> getStudents() {
+        return students;
+    }
 }

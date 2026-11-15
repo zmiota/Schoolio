@@ -36,18 +36,23 @@ public class GradeService {
     @Transactional
     public Grade createGrade(CreateGradeRequest request) {
         if (request.getValue() == null || request.getValue() < 1 || request.getValue() > 6) {
-            throw new IllegalArgumentException("Ocena musi mieścić się w przedziale od 1 do 6.");
+            throw new IllegalArgumentException("Niepoprawna wartosc oceny (1-6)");
         }
 
         Student student = studentRepository.findById(request.getStudentId())
-                .orElseThrow(() -> new IllegalArgumentException("Nie znaleziono ucznia o ID: " + request.getStudentId()));
+                .orElseThrow(() -> new IllegalArgumentException("Brak ucznia o podanym id"));
 
         Subject subject = subjectRepository.findById(request.getSubjectId())
-                .orElseThrow(() -> new IllegalArgumentException("Nie znaleziono przedmiotu o ID: " + request.getSubjectId()));
+                .orElseThrow(() -> new IllegalArgumentException("Brak przedmiotu o podanym id"));
+
+        int weight = 1;
+        if (request.getWeight() != null) {
+            weight = request.getWeight();
+        }
 
         Grade grade = new Grade(
                 request.getValue(),
-                request.getWeight() != null ? request.getWeight() : 1,
+                weight,
                 GradeCategory.EXAM,
                 request.getComment(),
                 LocalDate.now(),

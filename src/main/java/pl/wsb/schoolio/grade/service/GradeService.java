@@ -1,14 +1,14 @@
-package pl.wsb.projekt.grade.service;
+package pl.wsb.schoolio.grade.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.wsb.projekt.account.domain.UserAccount;
-import pl.wsb.projekt.account.repository.UserAccountRepository;
-import pl.wsb.projekt.grade.domain.Grade;
-import pl.wsb.projekt.grade.dto.CreateGradeRequest;
-import pl.wsb.projekt.grade.repository.GradeRepository;
-import pl.wsb.projekt.subject.domain.Subject;
-import pl.wsb.projekt.subject.repository.SubjectRepository;
+import pl.wsb.schoolio.account.domain.UserAccount;
+import pl.wsb.schoolio.account.repository.UserAccountRepository;
+import pl.wsb.schoolio.grade.dto.CreateGradeRequest;
+import pl.wsb.schoolio.grade.entity.Grade;
+import pl.wsb.schoolio.grade.repository.GradeRepository;
+import pl.wsb.schoolio.subject.entity.Subject;
+import pl.wsb.schoolio.subject.repository.SubjectRepository;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -6,15 +6,15 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
+        <!-- Minimum 3.5.x patch release fixing CVE-2026-41001 and managed Spring Framework/Data advisories. -->
         <version>3.5.15</version>
         <relativePath/>
     </parent>
 
     <groupId>pl.wsb</groupId>
-    <!-- LAB 01: dopisz nazwę projektu (taką samą jak pakiet pl.wsb.<nazwaprojektu>), np. wdtb-2026-backend-kawiarnia -->
-    <artifactId>wdtb-2026-backend</artifactId>
-    <!-- LAB 01: wpisz numery indeksów osób z zespołu, np. 1.0.0-123456-123457-123458 (reguła R1.05) -->
-    <version>1.2.0-113667-113577-113500-SNAPSHOT</version>
+    <!-- LAB 01: dopisz nazwę projektu (taką samą jak pakiet pl.wsb.schoolio), np. wdtb-2026-backend-kawiarnia -->
+<artifactId>wdtb-2026-backend-schoolio</artifactId>    <!-- LAB 01: wpisz numery indeksów osób z zespołu, np. 1.0.0-123456-123457-123458 (reguła R1.05) -->
+    <version>1.0.0-113667-113577-113500</version>
     <name>WdTB-2026-Backend</name>
     <description>Projekt zespołowy z przedmiotu Wprowadzenie do technologii backendowych (WdTB)</description>
 
@@ -40,7 +40,7 @@
         -->
         <lab>1</lab>
     </properties>
-
+<lab>2</lab>
     <dependencies>
         <!-- LAB 02: JPA + H2 -->
         <dependency>

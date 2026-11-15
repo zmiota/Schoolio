@@ -1,4 +1,4 @@
-package pl.wsb.projekt.grade.dto;
+package pl.wsb.schoolio.grade.dto;
 
 public class CreateGradeRequest {
     private Integer value;

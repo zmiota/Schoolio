@@ -1,10 +1,11 @@
-package pl.wsb.projekt.grade.controller;
+package pl.wsb.schoolio.grade.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import pl.wsb.projekt.grade.domain.Grade;
-import pl.wsb.projekt.grade.dto.CreateGradeRequest;
-import pl.wsb.projekt.grade.service.GradeService;
+
+import pl.wsb.schoolio.grade.dto.CreateGradeRequest;
+import pl.wsb.schoolio.grade.entity.Grade;
+import pl.wsb.schoolio.grade.service.GradeService;
 
 import java.util.List;
 
